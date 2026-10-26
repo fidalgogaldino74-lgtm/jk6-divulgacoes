@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Conheça a JK6, consulte as promoções disponíveis e acesse a plataforma pelo link de divulgação.">
+  <title>JK6 | Portal de Divulgação</title>
+
+  <style>
+    :root {
+      --bg: #090b10;
+      --panel: #121620;
+      --gold: #f5c451;
+      --gold2: #ffdf88;
+      --text: #f8f8fb;
+      --muted: #a6adbd;
+      --line: rgba(255,255,255,.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(ellipse at 50% -15%, #263044 0, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(9,11,16,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .logo span { color: white; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 48px;
+      padding: 13px 23px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .2s, filter .2s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .button-gold {
+      background: linear-gradient(135deg, var(--gold2), #e5a91e);
+      color: #17130a;
+      box-shadow: 0 8px 30px rgba(245,196,81,.16);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(245,196,81,.5);
+      color: var(--gold2);
+    }
+
+    .hero {
+      padding: 85px 0 75px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(245,196,81,.35);
+      background: rgba(245,196,81,.08);
+      color: var(--gold2);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff0bd, #f5c451, #ffe7a0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .hero-card {
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 30px;
+      border: 1px solid rgba(245,196,81,.22);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 0, rgba(245,196,81,.10), transparent 60%),
+        var(--panel);
+      box-shadow: 0 25px 90px rgba(0,0,0,.22);
+    }
+
+    .hero-symbol {
+      width: 85px;
+      height: 85px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      border: 1px solid rgba(245,196,81,.5);
+      background: rgba(245,196,81,.09);
+      color: var(--gold);
+      font-size: 30px;
+      font-weight: 900;
+      transform: rotate(-3deg);
+    }
+
+    section { padding: 65px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: linear-gradient(145deg, #151a25, #0e1118);
+      transition: border-color .2s, transform .2s;
+    }
+
+    .card:hover {
+      border-color: rgba(245,196,81,.5);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: rgba(245,196,81,.10);
+      border-radius: 13px;
+      color: var(--gold);
+      font-size: 24px;
+      margin-bottom: 17px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .promo-panel {
+      padding: 36px;
+      border: 1px solid rgba(245,196,81,.3);
+      border-radius: 22px;
+      background:
+        radial-gradient(ellipse at 100% 0, rgba(245,196,81,.12), transparent 55%),
+        #121620;
+      text-align: center;
+    }
+
+    .promo-panel h2 {
+      font-size: clamp(27px, 5vw, 42px);
+      margin-bottom: 12px;
+    }
+
+    .promo-panel p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 23px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      counter-reset: step;
+    }
+
+    .step {
+      padding: 22px;
+      border-top: 2px solid rgba(245,196,81,.6);
+      background: rgba(255,255,255,.025);
+      border-radius: 0 0 14px 14px;
+    }
+
+    .step-number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .step h3 { margin: 8px 0; }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      padding: 20px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .notice strong { color: var(--gold2); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0 95px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer p { margin: 7px 0; }
+
+    .bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding: 12px 4%;
+      background: rgba(9,11,16,.96);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .bottom-bar .button { width: 100%; }
+
+    .fade-in {
+      animation: appear .8s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 760px) {
+      .nav { min-height: 64px; }
+      .nav-links { display: none; }
+      .nav > .button { padding: 10px 13px; font-size: 12px; }
+      .hero { padding: 65px 0 45px; }
+      .hero-card { padding: 23px 17px; margin-top: 32px; }
+      .cards, .steps { grid-template-columns: 1fr; }
+      section { padding: 48px 0; }
+      .promo-panel { padding: 28px 18px; }
+      .bottom-bar { display: block; }
+      h1 { letter-spacing: -1px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#inicio" aria-label="JK6 início">JK<span>6</span></a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#vantagens">Conheça</a>
+        <a href="#promocoes">Promoções</a>
+        <a href="#como-acessar">Como acessar</a>
+      </nav>
+
+      <a class="button button-gold"
+         href="https://jk6dloi1.com/?pid=2133599584&amp;fromPage=AGENCY_ONE"
+         target="_blank" rel="noopener noreferrer">
+        Acessar JK6 ↗
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container fade-in">
+        <span class="eyebrow">Portal de divulgação JK6</span>
+
+        <h1>
+          Conheça a plataforma<br>
+          <span class="gradient-text">JK6</span>
+        </h1>
+
+        <p>
+          Acesse a plataforma pelo nosso link de divulgação,
+          consulte as ofertas disponíveis e confira as condições
+          diretamente no ambiente oficial.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-gold"
+             href="https://jk6dloi1.com/?pid=2133599584&amp;fromPage=AGENCY_ONE"
+             target="_blank" rel="noopener noreferrer">
+            CONHECER A JK6 ↗
+          </a>
+
+          <a class="button button-outline" href="#promocoes">
+            VER INFORMAÇÕES
+          </a>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-symbol">JK6</div>
+          <h2 class="gradient-text">Seu próximo acesso começa aqui</h2>
+          <p style="margin: 12px auto 22px; font-size: 14px;">
+            Use o link abaixo para visitar a plataforma e verificar
+            os recursos, as condições de participação e as ofertas
+            que estiverem disponíveis para sua conta.
+          </p>
+          <a class="button button-gold"
+             href="https://jk6dloi1.com/?pid=2133599584&amp;fromPage=AGENCY_ONE"
+             target="_blank" rel="noopener noreferrer">
+            IR PARA A PLATAFORMA
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="vantagens">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore a <span class="gradient-text">JK6</span></h2>
+          <p>
+            Encontre as informações da plataforma e consulte as
+            condições antes de participar.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">✦</div>
+            <h3>Ofertas disponíveis</h3>
+            <p>
+              Consulte na própria plataforma as promoções vigentes,
+              os critérios de elegibilidade e os prazos.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🎁</div>
+            <h3>Bônus para inscritos</h3>
+            <p>
+              Verifique se há bônus para novos usuários e leia
+              todas as regras antes de aceitar uma oferta.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">↗</div>
+            <h3>Acesso direto</h3>
+            <p>
+              Abra o endereço da JK6 pelo botão desta página,
+              sem precisar procurar o link novamente.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="promocoes">
+      <div class="container">
+        <div class="promo-panel">
+          <span class="eyebrow">Consulte as condições</span>
+          <h2>Confira as <span class="gradient-text">promoções</span></h2>
+          <p>
+            Os bônus, valores, requisitos e a disponibilidade podem
+            mudar. Confira as condições diretamente na plataforma
+            antes de se cadastrar ou realizar qualquer transação.
+          </p>
+          <a class="button button-gold"
+             href="https://jk6dloi1.com/?pid=2133599584&amp;fromPage=AGENCY_ONE"
+             target="_blank" rel="noopener noreferrer">
+            CONFERIR NA JK6 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-acessar">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como acessar</h2>
+          <p>Três passos simples para visitar a plataforma.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">PASSO 01</span>
+            <h3>Abra o link</h3>
+            <p>Toque em qualquer botão de acesso desta página.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">PASSO 02</span>
+            <h3>Confira as regras</h3>
+            <p>
+              Leia os termos, as condições das ofertas e os
+              requisitos de cadastro.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">PASSO 03</span>
+            <h3>Decida com cuidado</h3>
+            <p>
+              Participe somente se for legal e adequado para você.
+              Nunca arrisque dinheiro necessário para suas despesas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="notice">
+          <strong>Importante — 18+.</strong>
+          Esta página é um portal independente de divulgação e não
+          representa, por si só, o site oficial da JK6. O link acima
+          contém um identificador de divulgação. A existência de
+          bônus, sua disponibilidade e suas regras devem ser
+          confirmadas na plataforma. Não há garantia de ganhos.
+          Se a plataforma envolver apostas, participe apenas quando
+          isso for legal na sua região e pratique o jogo responsável.
+          Nunca utilize dinheiro destinado a necessidades essenciais.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">JK<span>6</span></div>
+      <p>Portal independente de divulgação.</p>
+      <p>Conteúdo destinado exclusivamente a maiores de 18 anos.</p>
+      <p>© <span id="year"></span> JK6 — Página de divulgação.</p>
+      <p>As marcas e os serviços mencionados pertencem aos respectivos titulares.</p>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    <a class="button button-gold"
+       href="https://jk6dloi1.com/?pid=2133599584&amp;fromPage=AGENCY_ONE"
+       target="_blank" rel="noopener noreferrer">
+      ACESSAR A JK6 ↗
+    </a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
